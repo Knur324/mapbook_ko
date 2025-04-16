@@ -1,4 +1,4 @@
-from notatnik import add_user
+from controller import add_user
 from utils.model import users
 from utils.controller import get_user_info, add_user, remove user
 
