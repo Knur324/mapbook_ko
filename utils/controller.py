@@ -4,6 +4,13 @@ def get_user_info(users_data: list) -> None:
 
 def add_user(users_data: list) -> None:
     user_name = input("podaj imię nowego użytkownika: ")
-     user_location = input("podaj lokalizacje nowego znajomego: ")
-      user_posts = int(input("podaj liczbę postów "))
-       users_data.append({"name": user_name, "location": user_location, "posts": user_posts})
+    user_location = input("podaj lokalizacje nowego znajomego: ")
+    user_posts = int(input("podaj liczbę postów "))
+    users_data.append({"name": user_name, "location": user_location, "posts": user_posts})
+
+
+def remove_user(users_data: list) -> None:
+    user_name = input("podaj imię użytkownika do usunięcia: ")
+    for user in users_data:
+        if user["name"] == user_name:
+            users_data.remove(user)
