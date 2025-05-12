@@ -2,6 +2,7 @@ def get_user_info(users_data: list) -> None:
     for user in users_data:
         print(f"Twój znajomy {user['name']}! z miejscowości {user["location"]} opublikował {user['posts']} postów")
 
+
 def add_user(users_data: list) -> None:
     user_name = input("podaj imię nowego użytkownika: ")
     user_location = input("podaj lokalizacje nowego znajomego: ")
@@ -14,3 +15,12 @@ def remove_user(users_data: list) -> None:
     for user in users_data:
         if user["name"] == user_name:
             users_data.remove(user)
+
+
+def update_user(users_data: list) -> None:
+    user_name = input("podaj imię użytkownika którego dane chcesz zaaktualizować: ")
+    for user in users_data:
+        if user["name"] == user_name:
+            user["name"] = input("podaj nowe imie użytkownika: ")
+            user["location"] = input("podaj nową lokalizacje użytkownika: ")
+            user["posts"] = int(input("podaj nową liczbe postów użytkownika: "))
