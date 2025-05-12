@@ -25,7 +25,7 @@ def update_user(users_data: list) -> None:
             user["location"] = input("podaj nową lokalizacje użytkownika: ")
             user["posts"] = int(input("podaj nową liczbe postów użytkownika: "))
 
-def get_coordinates(city_name:str)->list:
+def get_coordinates(city_name:str)-> tuple[float, float]:
     import requests
     from bs4 import BeautifulSoup
     url=f"https://pl.wikipedia.org/wiki/{city_name}"
@@ -34,7 +34,7 @@ def get_coordinates(city_name:str)->list:
     latitude=float(response_html.select(".latitude")[1].text.replace(",","."))
     longitude=float(response_html.select(".longitude")[1].text.replace(",","."))
     print(latitude,longitude)
-    return (latitude,longitude)
+    return(latitude,longitude)
 
 
 def get_map(users):
